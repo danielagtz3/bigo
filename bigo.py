@@ -16,31 +16,31 @@ UT EID 1: adg4258
 """
 
 def length_of_longest_substring_n3(s):
-     max_length = 0
+    max_length = 0
 
-     for i in range(len(s)):
-            for j in range(i, len(s)):
-                  substr = s[i:j+1]
-                  if len(set(substr)) == len(substr):
-                        max_length = max(max_length, len(substr))
+    for i in range(len(s)):
+        for j in range(i, len(s)):
+            substr = s[i:j+1]
+            if len(set(substr)) == len(substr):
+                max_length = max(max_length, len(substr))
 
-     return max_length
+    return max_length
 
 def length_of_longest_substring_n2(s):
-      max_length = 0
+    max_length = 0
 
-      for i in range(len(s)):
-            freq_list = [0] * 256
+    for i in range(len(s)):
+        freq_list = [0] * 256
 
-            for j in range(i, len(s)):
-                  char_index = ord(s[j])
-                  freq_list[char_index] += 1
+        for j in range(i, len(s)):
+            char_index = ord(s[j])
+            freq_list[char_index] += 1
 
-                  if freq_list[char_index] > 1:
-                        break
-                  max_length = max(max_length, j - i + 1)
+            if freq_list[char_index] > 1:
+                break
+            max_length = max(max_length, j - i + 1)
 
-      return max_length
+    return max_length
 
 
 def length_of_longest_substring_n(s):
